@@ -1,0 +1,25 @@
+{
+  "name": "team-profile-generator",
+  "description": "Command-line application generating HTML file of individual team member info cards.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kayleriegerpatton/team-profile-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kayleriegerpatton/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/kayleriegerpatton/team-profile-generator#readme"
+}
