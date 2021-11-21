@@ -5,8 +5,9 @@ const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
 const {
   managerQuestions,
-  newEmployeeQuestion,
-  employeeTypeQuestion,
+  newEmployeeTypeQuestion,
+  engineerQuestions,
+  internQuestions,
 } = require("./questions");
 
 const inquirer = require("inquirer");
@@ -26,17 +27,33 @@ const start = async () => {
   // prompt initial Manager questions
   const managerAnswers = await inquirer.prompt(managerQuestions);
 
-  //   ask if user wants to create a new employee
-  const newEmployeeAnswer = await inquirer.prompt(newEmployeeQuestion);
+  let inProgress = true;
+  while (inProgress) {
+    //   ask if user wants to create a new employee
+    const newEmployeeTypeAnswer = await inquirer.prompt(
+      newEmployeeTypeQuestion
+    );
 
-  //   if yes, ask for employee type
-  if (newEmployeeAnswer.newEmployeeConfirm === true) {
-    const employeeTypeAnswer = await inquirer.prompt(employeeTypeQuestion);
+    //   returns: {employeeType: ''}
+    console.log(newEmployeeTypeAnswer);
+    // ask Engineer questions
+    if (newEmployeeTypeAnswer.employeeType === "engineer") {
+      //   console.log("ask engineer questions");
+      const engineerAnswers = await inquirer.prompt(engineerQuestions);
+    }
 
-    // if done creating new employees, end the application
-  } else {
-    console.log("app ended");
-    process.exit(0);
+    // ask Intern questions
+    if (newEmployeeTypeAnswer.employeeType === "intern") {
+      console.log("ask intern questions");
+      const internAnswers = await inquirer.prompt(internQuestions);
+    }
+
+    // end application
+    if (newEmployeeTypeAnswer.employeeType === "none") {
+      inProgress = false;
+      console.log("app ended");
+      process.exit(0);
+    }
   }
 };
 

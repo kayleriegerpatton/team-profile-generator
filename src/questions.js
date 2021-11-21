@@ -21,31 +21,22 @@ const managerQuestions = [
     name: "managerEmail",
     message: "Enter your email address:",
   },
-  //   {
-  //     type: "confirm",
-  //     name: "newNoteConfirm",
-  //     message: "Do you want to create an employee?",
-  //     default: false,
-  //   },
-];
-
-const newEmployeeQuestion = [
   {
-    type: "confirm",
-    name: "newEmployeeConfirm",
-    message: "Do you want to create an employee?",
-    default: false,
+    type: "number",
+    name: "officeNumber",
+    message: "Enter your office number:",
   },
 ];
 
-const employeeTypeQuestion = [
+const newEmployeeTypeQuestion = [
   {
     type: "list",
     name: "employeeType",
-    message: "Which type of employee do you want to enter?:",
+    message: "Which type of employee do you want to create?:",
     choices: [
       { name: "Engineer", value: "engineer" },
-      { name: "Intern", value: "Intern" },
+      { name: "Intern", value: "intern" },
+      { name: "None", value: "none" },
     ],
   },
 ];
@@ -103,8 +94,7 @@ const internQuestions = [
 // exports
 module.exports = {
   managerQuestions,
-  newEmployeeQuestion,
-  employeeTypeQuestion,
+  newEmployeeTypeQuestion,
   engineerQuestions,
   internQuestions,
 };
