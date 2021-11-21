@@ -36,6 +36,7 @@ const start = async () => {
 
     // if done creating new employees, end app
   } else {
+    // console.log("app ended");
     process.exit(0);
   }
 };
