@@ -16,6 +16,15 @@ const managerQuestions = [
     name: "managerEmail",
     message: "Enter your email address:",
   },
+  //   {
+  //     type: "confirm",
+  //     name: "newNoteConfirm",
+  //     message: "Do you want to create an employee?",
+  //     default: false,
+  //   },
+];
+
+const newEmployeeQuestion = [
   {
     type: "confirm",
     name: "newNoteConfirm",
@@ -86,9 +95,10 @@ const internQuestions = [
   },
 ];
 
-//   exports
+// exports
 module.exports = {
   managerQuestions,
+  newEmployeeQuestion,
   employeeTypeQuestion,
   engineerQuestions,
   internQuestions,

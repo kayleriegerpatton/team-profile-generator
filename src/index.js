@@ -4,7 +4,11 @@ const Employee = require("../lib/Employee");
 const Manager = require("../lib/Manager");
 const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
-const { managerQuestions } = require("./questions");
+const {
+  managerQuestions,
+  newEmployeeQuestion,
+  employeeTypeQuestion,
+} = require("./questions");
 
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -23,7 +27,15 @@ const start = async () => {
   // prompt initial Manager questions
   const managerAnswers = await inquirer.prompt(managerQuestions);
 
-  console.log(managerAnswers);
+  //   ask if user wants to create a new employee
+  const newEmployeeAnswer = await inquirer.prompt(newEmployeeQuestion);
+  //   if yes, ask for employee type
+  if (newEmployeeAnswer) {
+    const employeeTypeAnswer = await inquirer.prompt(employeeTypeQuestion);
+    // if done creating new employees, end app
+  } else {
+    process.exit(0);
+  }
 };
 
 // run initial manager prompt questions
