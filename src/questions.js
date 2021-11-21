@@ -6,12 +6,12 @@ const managerQuestions = [
   },
   {
     type: "input",
-    name: "managerName",
+    name: "name",
     message: "Enter your name:",
   },
   {
     type: "number",
-    name: "managerId",
+    name: "id",
     message: "Enter your ID number:",
     // validate: validateNumber(),
     // if NaN, throw error message & repeat prompt???
@@ -25,6 +25,8 @@ const managerQuestions = [
     type: "number",
     name: "officeNumber",
     message: "Enter your office number:",
+    // validate: validateNumber(),
+    // if NaN, throw error message & repeat prompt???
   },
 ];
 
@@ -44,50 +46,50 @@ const newEmployeeTypeQuestion = [
 const engineerQuestions = [
   {
     type: "input",
-    name: "engineerName",
-    message: "Enter your name:",
+    name: "name",
+    message: "Name:",
   },
   {
     type: "number",
-    name: "engineerId",
-    message: "Enter your ID number:",
+    name: "id",
+    message: "ID number:",
     // validate: validateNumber(),
     // if NaN, throw error message & repeat prompt???
   },
   {
     type: "input",
-    name: "engineerEmail",
-    message: "Enter your email address:",
+    name: "email",
+    message: "Email address:",
   },
   {
     type: "input",
     name: "github",
-    message: "Enter your GitHub username:",
+    message: "GitHub username:",
   },
 ];
 
 const internQuestions = [
   {
     type: "input",
-    name: "internName",
-    message: "Enter your name:",
+    name: "name",
+    message: "Name:",
   },
   {
     type: "number",
-    name: "internId",
-    message: "Enter your ID number:",
+    name: "id",
+    message: "ID number:",
     // validate: validateNumber(),
     // if NaN, throw error message & repeat prompt???
   },
   {
     type: "input",
-    name: "internEmail",
-    message: "Enter your email address:",
+    name: "email",
+    message: "Email address:",
   },
   {
     type: "input",
     name: "school",
-    message: "Enter your school name:",
+    message: "School:",
   },
 ];
 

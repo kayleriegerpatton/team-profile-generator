@@ -34,18 +34,29 @@ const start = async () => {
       newEmployeeTypeQuestion
     );
 
+    const employeeArray = [];
+
     //   returns: {employeeType: ''}
     console.log(newEmployeeTypeAnswer);
     // ask Engineer questions
     if (newEmployeeTypeAnswer.employeeType === "engineer") {
       //   console.log("ask engineer questions");
       const engineerAnswers = await inquirer.prompt(engineerQuestions);
+      console.log(engineerAnswers);
+
+      //   use class to create new engineer
+      const engineer = new Engineer(engineerAnswers);
+      console.log(engineer);
+      // push into array
     }
 
     // ask Intern questions
     if (newEmployeeTypeAnswer.employeeType === "intern") {
-      console.log("ask intern questions");
       const internAnswers = await inquirer.prompt(internQuestions);
+
+      //   use class to create new intern
+      const intern = new Intern(internAnswers);
+      console.log(intern);
     }
 
     // end application
