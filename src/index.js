@@ -1,5 +1,4 @@
 // imports
-// const { Employee, Engineer, Manager, Intern } = require("../lib");
 const Employee = require("../lib/Employee");
 const Manager = require("../lib/Manager");
 const Engineer = require("../lib/Engineer");
@@ -31,12 +30,12 @@ const start = async () => {
   const newEmployeeAnswer = await inquirer.prompt(newEmployeeQuestion);
 
   //   if yes, ask for employee type
-  if (newEmployeeAnswer.newNoteConfirm === true) {
+  if (newEmployeeAnswer.newEmployeeConfirm === true) {
     const employeeTypeAnswer = await inquirer.prompt(employeeTypeQuestion);
 
-    // if done creating new employees, end app
+    // if done creating new employees, end the application
   } else {
-    // console.log("app ended");
+    console.log("app ended");
     process.exit(0);
   }
 };

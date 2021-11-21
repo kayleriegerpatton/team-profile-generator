@@ -32,7 +32,7 @@ const managerQuestions = [
 const newEmployeeQuestion = [
   {
     type: "confirm",
-    name: "newNoteConfirm",
+    name: "newEmployeeConfirm",
     message: "Do you want to create an employee?",
     default: false,
   },
