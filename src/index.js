@@ -29,9 +29,11 @@ const start = async () => {
 
   //   ask if user wants to create a new employee
   const newEmployeeAnswer = await inquirer.prompt(newEmployeeQuestion);
+
   //   if yes, ask for employee type
-  if (newEmployeeAnswer) {
+  if (newEmployeeAnswer.newNoteConfirm === true) {
     const employeeTypeAnswer = await inquirer.prompt(employeeTypeQuestion);
+
     // if done creating new employees, end app
   } else {
     process.exit(0);

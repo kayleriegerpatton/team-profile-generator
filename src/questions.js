@@ -1,6 +1,11 @@
 const managerQuestions = [
   {
     type: "input",
+    name: "teamName",
+    message: "Enter your team's name:",
+  },
+  {
+    type: "input",
     name: "managerName",
     message: "Enter your name:",
   },
