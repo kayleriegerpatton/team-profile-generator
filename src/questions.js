@@ -60,6 +60,7 @@ const engineerQuestions = [
     type: "input",
     name: "name",
     message: "Name:",
+    validate: validateInput,
   },
   {
     type: "input",
@@ -84,6 +85,7 @@ const engineerQuestions = [
     type: "input",
     name: "github",
     message: "GitHub username:",
+    validate: validateInput,
   },
 ];
 
@@ -92,6 +94,7 @@ const internQuestions = [
     type: "input",
     name: "name",
     message: "Name:",
+    validate: validateInput,
   },
   {
     type: "input",
@@ -116,6 +119,7 @@ const internQuestions = [
     type: "input",
     name: "school",
     message: "School:",
+    validate: validateInput,
   },
 ];
 
