@@ -13,16 +13,6 @@ const {
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-// const validateNumber = (answers) => {
-//   if (answers.managerId === NaN) {
-//     console.log("not a number");
-//     return false;
-//   } else {
-//     console.log("this is a number");
-//     return true;
-//   }
-// };
-
 const start = async () => {
   // prompt initial Manager questions
   const managerAnswers = await inquirer.prompt(managerQuestions);
@@ -36,37 +26,38 @@ const start = async () => {
 
     const employeeArray = [];
 
-    //   returns: {employeeType: ''}
-    console.log(newEmployeeTypeAnswer);
     // ask Engineer questions
     if (newEmployeeTypeAnswer.employeeType === "engineer") {
-      //   console.log("ask engineer questions");
-      const engineerAnswers = await inquirer.prompt(engineerQuestions);
-      console.log(engineerAnswers);
+      const { name, id, email, github } = await inquirer.prompt(
+        engineerQuestions
+      );
 
-      //   use class to create new engineer
-      const engineer = new Engineer(engineerAnswers);
-      console.log(engineer);
+      // create new engineer instance
+      const engineer = new Engineer({ name, id, email, github });
+      //   console.log(engineer);
+
       // push into array
+      employeeArray.push(engineer);
+      console.log(employeeArray);
     }
 
     // ask Intern questions
     if (newEmployeeTypeAnswer.employeeType === "intern") {
-      const internAnswers = await inquirer.prompt(internQuestions);
+      const { name, id, email, school } = await inquirer.prompt(
+        internQuestions
+      );
 
-      //   use class to create new intern
-      const intern = new Intern(internAnswers);
-      console.log(intern);
+      // create new intern instance
+      const intern = new Intern({ name, id, email, school });
     }
 
     // end application
     if (newEmployeeTypeAnswer.employeeType === "none") {
       inProgress = false;
-      console.log("app ended");
+      //   console.log("app ended");
       process.exit(0);
     }
   }
 };
 
-// run initial manager prompt questions
 start();

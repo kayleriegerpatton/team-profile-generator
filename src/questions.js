@@ -1,32 +1,44 @@
+const { validateInput } = require("./utils");
+
 const managerQuestions = [
   {
     type: "input",
     name: "teamName",
     message: "Enter your team's name:",
+    validate: validateInput,
   },
   {
     type: "input",
     name: "name",
     message: "Enter your name:",
-  },
-  {
-    type: "number",
-    name: "id",
-    message: "Enter your ID number:",
-    // validate: validateNumber(),
-    // if NaN, throw error message & repeat prompt???
+    validate: validateInput,
   },
   {
     type: "input",
-    name: "managerEmail",
-    message: "Enter your email address:",
+    name: "id",
+    message: "Enter your ID number:",
+    validate: (id) => {
+      return /^\d+$/.test(id) || "Please enter only numbers.";
+    },
   },
   {
-    type: "number",
+    type: "input",
+    name: "email",
+    message: "Enter your email address:",
+    validate: (email) => {
+      return (
+        /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email) ||
+        "Please enter a valid email."
+      );
+    },
+  },
+  {
+    type: "input",
     name: "officeNumber",
     message: "Enter your office number:",
-    // validate: validateNumber(),
-    // if NaN, throw error message & repeat prompt???
+    validate: (officeNumber) => {
+      return /^\d+$/.test(officeNumber) || "Please enter only numbers.";
+    },
   },
 ];
 
@@ -50,16 +62,23 @@ const engineerQuestions = [
     message: "Name:",
   },
   {
-    type: "number",
+    type: "input",
     name: "id",
     message: "ID number:",
-    // validate: validateNumber(),
-    // if NaN, throw error message & repeat prompt???
+    validate: (id) => {
+      return /^\d+$/.test(id) || "Please enter only numbers.";
+    },
   },
   {
     type: "input",
     name: "email",
     message: "Email address:",
+    validate: (email) => {
+      return (
+        /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email) ||
+        "Please enter a valid email."
+      );
+    },
   },
   {
     type: "input",
@@ -75,16 +94,23 @@ const internQuestions = [
     message: "Name:",
   },
   {
-    type: "number",
+    type: "input",
     name: "id",
     message: "ID number:",
-    // validate: validateNumber(),
-    // if NaN, throw error message & repeat prompt???
+    validate: (id) => {
+      return /^\d+$/.test(id) || "Please enter only numbers.";
+    },
   },
   {
     type: "input",
     name: "email",
     message: "Email address:",
+    validate: (email) => {
+      return (
+        /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email) ||
+        "Please enter a valid email."
+      );
+    },
   },
   {
     type: "input",
