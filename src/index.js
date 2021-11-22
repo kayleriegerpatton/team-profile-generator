@@ -14,17 +14,18 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 
 const start = async () => {
+  let inProgress = true;
+  const employeeArray = [];
+
   // prompt initial Manager questions
   const managerAnswers = await inquirer.prompt(managerQuestions);
+  employeeArray.push(managerAnswers);
 
-  let inProgress = true;
   while (inProgress) {
     //   ask if user wants to create a new employee
     const newEmployeeTypeAnswer = await inquirer.prompt(
       newEmployeeTypeQuestion
     );
-
-    const employeeArray = [];
 
     // ask Engineer questions
     if (newEmployeeTypeAnswer.employeeType === "engineer") {
@@ -38,7 +39,6 @@ const start = async () => {
 
       // push into array
       employeeArray.push(engineer);
-      console.log(employeeArray);
     }
 
     // ask Intern questions
@@ -49,15 +49,19 @@ const start = async () => {
 
       // create new intern instance
       const intern = new Intern({ name, id, email, school });
+
+      //   push into array
+      employeeArray.push(intern);
     }
 
     // end application
     if (newEmployeeTypeAnswer.employeeType === "none") {
       inProgress = false;
-      //   console.log("app ended");
-      process.exit(0);
+      //   process.exit(0);
     }
   }
+
+  console.log(employeeArray);
 };
 
 start();

@@ -9,6 +9,14 @@ const managerQuestions = [
   },
   {
     type: "input",
+    name: "fileName",
+    message: "Enter new file name without an extension:",
+    //   validate: (fileName) => {
+    //       return [_a-zA-Z0-9\\-\\]+.test(fileName) || "Please enter a valid file name without an extension"
+    //   }
+  },
+  {
+    type: "input",
     name: "name",
     message: "Enter your name:",
     validate: validateInput,
