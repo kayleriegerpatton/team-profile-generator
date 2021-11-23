@@ -42,7 +42,6 @@ const start = async () => {
 
       // create new engineer instance
       const engineer = new Engineer({ name, id, email, github });
-      //   console.log(engineer);
 
       // push into array
       employeeArray.push(engineer);
@@ -72,7 +71,8 @@ const start = async () => {
   const categorizedEmployees = categorizeEmployees(employeeArray);
 
   //   pass employeeArray into generateHTML function
-  const html = generateHTML(categorizedEmployees);
+  const html = generateHTML(teamName, fileName, categorizedEmployees);
+  console.log(html);
 };
 
 start();
