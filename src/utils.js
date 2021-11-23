@@ -32,5 +32,7 @@ const categorizeEmployees = (employeeArray) =>
     { manager: [], engineers: [], interns: [] }
   );
 
+const generateHTML = () => {};
+
 // exports
-module.exports = { validateInput, categorizeEmployees };
+module.exports = { validateInput, categorizeEmployees, generateHTML };
