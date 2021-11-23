@@ -18,7 +18,7 @@ const managerQuestions = [
   {
     type: "input",
     name: "name",
-    message: "Enter your name:",
+    message: "Manager name:",
     validate: validateInput,
   },
   {

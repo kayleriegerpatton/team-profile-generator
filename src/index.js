@@ -9,6 +9,7 @@ const {
   engineerQuestions,
   internQuestions,
 } = require("./questions");
+const { categorizeEmployees } = require("./utils");
 
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -18,8 +19,14 @@ const start = async () => {
   const employeeArray = [];
 
   // prompt initial Manager questions
-  const managerAnswers = await inquirer.prompt(managerQuestions);
-  employeeArray.push(managerAnswers);
+  const { teamName, fileName, ...managerAnswers } = await inquirer.prompt(
+    managerQuestions
+  );
+
+  //   create Manager instance
+  const manager = new Manager(managerAnswers);
+
+  employeeArray.push(manager);
 
   while (inProgress) {
     //   ask if user wants to create a new employee
@@ -61,7 +68,11 @@ const start = async () => {
     }
   }
 
-  console.log(employeeArray);
+  // categorize employees?
+  const categorizedEmployees = categorizeEmployees(employeeArray);
+  console.log(categorizedEmployees);
+
+  //   pass employeeArray into generateHTML function
 };
 
 start();
