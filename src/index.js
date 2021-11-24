@@ -69,6 +69,7 @@ const start = async () => {
 
   // categorize employees
   const categorizedEmployees = categorizeEmployees(employeeArray);
+  //   console.log(categorizedEmployees);
 
   //   pass employeeArray into generateHTML function
   const html = generateHTML(teamName, categorizedEmployees);
