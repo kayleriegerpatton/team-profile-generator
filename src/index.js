@@ -1,5 +1,4 @@
 // imports
-const Employee = require("../lib/Employee");
 const Manager = require("../lib/Manager");
 const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
@@ -12,13 +11,12 @@ const {
 const { categorizeEmployees, generateHTML, writeToFile } = require("./utils");
 
 const inquirer = require("inquirer");
-const fs = require("fs");
 
 const start = async () => {
   let inProgress = true;
   const employeeArray = [];
 
-  // prompt initial Manager questions
+  // prompt Manager questions
   const { teamName, fileName, ...managerAnswers } = await inquirer.prompt(
     managerQuestions
   );
@@ -69,12 +67,9 @@ const start = async () => {
 
   // categorize employees
   const categorizedEmployees = categorizeEmployees(employeeArray);
-  //   console.log(categorizedEmployees);
 
   //   pass employeeArray into generateHTML function
   const html = generateHTML(teamName, categorizedEmployees);
-
-  console.log(html);
 
   writeToFile(`./dist/${fileName}.html`, html);
 
