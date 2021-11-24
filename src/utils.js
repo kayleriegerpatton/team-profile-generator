@@ -34,13 +34,13 @@ const categorizeEmployees = (employeeArray) =>
 //   return `${manager.generateCard}`;
 // };
 
-const generateEngineers = (engineers) => {
-  return `${engineers.map((engineers) => engineers.generateCard()).join("")}`;
+const generateCards = (employees) => {
+  return `${employees.map((employees) => employees.generateCard()).join("")}`;
 };
 
-const generateInterns = (interns) => {
-  return `${interns.map((interns) => interns.generateCard()).join("")}`;
-};
+// const generateInterns = (interns) => {
+//   return `${interns.map((interns) => interns.generateCard()).join("")}`;
+// };
 
 //   generate HTML from categorized employee array
 const generateHTML = (teamName, { manager, engineers, interns }) => {
@@ -79,8 +79,8 @@ const generateHTML = (teamName, { manager, engineers, interns }) => {
         <main>
           <div class="d-flex flex-wrap justify-content-evenly card-container">
 
-         ${engineers.length ? generateEngineers(engineers) : ""}
-         ${interns.length ? generateInterns(interns) : ""}
+         ${engineers.length ? generateCards(engineers) : ""}
+         ${interns.length ? generateCards(interns) : ""}
           </div>
         </main>
         <script src="./src/index.js"></script>
