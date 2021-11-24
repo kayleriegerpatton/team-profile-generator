@@ -28,21 +28,12 @@ const categorizeEmployees = (employeeArray) =>
     { manager: [], engineers: [], interns: [] }
   );
 
-// map through each manager/engineers/interns array to generate HTML cards and join
-
-// const generateManager = (manager) => {
-//   return `${manager.generateCard}`;
-// };
-
+// map through each employee type array, generate HTML cards, join
 const generateCards = (employees) => {
   return `${employees.map((employees) => employees.generateCard()).join("")}`;
 };
 
-// const generateInterns = (interns) => {
-//   return `${interns.map((interns) => interns.generateCard()).join("")}`;
-// };
-
-//   generate HTML from categorized employee array
+//   generate HTML from categorized employee arrays
 const generateHTML = (teamName, { manager, engineers, interns }) => {
   //   console.log(engineers.length);
   return `<!DOCTYPE html>
@@ -78,7 +69,7 @@ const generateHTML = (teamName, { manager, engineers, interns }) => {
         </header>
         <main>
           <div class="d-flex flex-wrap justify-content-evenly card-container">
-
+         ${manager.length ? generateCards(manager) : ""}
          ${engineers.length ? generateCards(engineers) : ""}
          ${interns.length ? generateCards(interns) : ""}
           </div>
