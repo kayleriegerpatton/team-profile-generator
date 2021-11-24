@@ -27,7 +27,7 @@ const managerQuestions = [
   {
     type: "input",
     name: "id",
-    message: "Enter your ID number:",
+    message: "Manager ID number:",
     validate: (id) => {
       return /^\d+$/.test(id) || "Please enter only numbers.";
     },
@@ -35,7 +35,7 @@ const managerQuestions = [
   {
     type: "input",
     name: "email",
-    message: "Enter your email address:",
+    message: "Manager email address:",
     validate: (email) => {
       return (
         /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email) ||
@@ -46,7 +46,7 @@ const managerQuestions = [
   {
     type: "input",
     name: "officeNumber",
-    message: "Enter your office number:",
+    message: "Manager office number:",
     validate: (officeNumber) => {
       return /^\d+$/.test(officeNumber) || "Please enter only numbers.";
     },
