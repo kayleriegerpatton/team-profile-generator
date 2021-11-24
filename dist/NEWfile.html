@@ -1,46 +1,4 @@
-// imports
-const fs = require("fs");
-
-const validateInput = (input) => {
-  if (!input) {
-    return "Field is required.";
-  }
-  return true;
-};
-
-const categorizeEmployees = (employeeArray) =>
-  employeeArray.reduce(
-    (acc, each) => {
-      if (each.getRole() === "Manager") {
-        acc.manager = [...acc.manager, each];
-      }
-
-      if (each.getRole() === "Engineer") {
-        acc.engineers = [...acc.engineers, each];
-      }
-
-      if (each.getRole() === "Intern") {
-        acc.interns = [...acc.interns, each];
-      }
-
-      return acc;
-    },
-    { manager: [], engineers: [], interns: [] }
-  );
-
-// map through each manager/engineers/interns array to generate HTML cards and join
-
-// const generateManager = (manager) => {
-//   return `${manager.generateCard}`;
-// };
-
-const generateEngineers = (engineers) => {
-  return `${engineers.map((engineers) => engineers.generateCard()).join("")}`;
-};
-
-//   generate HTML from categorized employee array
-const generateHTML = (teamName, { manager, engineers, interns }) => {
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
@@ -60,7 +18,7 @@ const generateHTML = (teamName, { manager, engineers, interns }) => {
         referrerpolicy="no-referrer"
       />
       <link rel="stylesheet" href="./dist/styles.css" />
-      <title>${teamName} Profiles</title>
+      <title>UoB Coding Profiles</title>
     </head>
     <body>
       <header>
@@ -68,13 +26,13 @@ const generateHTML = (teamName, { manager, engineers, interns }) => {
           class="text-center pt-4 pb-4"
           style="background-color: #3c008a; color: white"
         >
-          ${teamName} Profiles
+          UoB Coding Profiles
         </h1>
       </header>
       <main>
         <div class="d-flex flex-wrap justify-content-evenly card-container">
           
-       ${engineers.lenth ? generateEngineers(engineers) : ""}
+       
           <div class="card m-3" style="width: 18rem">
             <div class="card-body bg-light">
               <h5 class="card-title">Employee Name</h5>
@@ -103,22 +61,4 @@ const generateHTML = (teamName, { manager, engineers, interns }) => {
       <script src="./src/index.js"></script>
     </body>
   </html>
-  `;
-};
-
-const writeToFile = (filePath, data) => {
-  try {
-    fs.writeFileSync(filePath, data);
-    console.log("New file created.");
-  } catch (error) {
-    console.log(error.message);
-  }
-};
-
-// exports
-module.exports = {
-  validateInput,
-  categorizeEmployees,
-  generateHTML,
-  writeToFile,
-};
+  

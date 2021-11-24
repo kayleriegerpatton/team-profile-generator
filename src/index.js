@@ -9,7 +9,7 @@ const {
   engineerQuestions,
   internQuestions,
 } = require("./questions");
-const { categorizeEmployees, generateHTML } = require("./utils");
+const { categorizeEmployees, generateHTML, writeToFile } = require("./utils");
 
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -71,8 +71,13 @@ const start = async () => {
   const categorizedEmployees = categorizeEmployees(employeeArray);
 
   //   pass employeeArray into generateHTML function
-  const html = generateHTML(teamName, fileName, categorizedEmployees);
+  const html = generateHTML(teamName, categorizedEmployees);
+
   console.log(html);
+
+  writeToFile(`./dist/${fileName}.html`, html);
+
+  process.exit(0);
 };
 
 start();
