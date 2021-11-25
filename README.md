@@ -55,6 +55,6 @@ To contribute to this project, please [email](mailto:kayle.patton22@gmail.com) m
 
 MIT License
 
-## VIdeo Walk Through
+## Video Walk Through
 
-[Google Drive link]()
+[Google Drive link](https://drive.google.com/file/d/1cAm5uS1AbOoy8jIXAAhPEshkxHG2Q4zB/view?usp=sharing)
