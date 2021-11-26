@@ -16,12 +16,13 @@ Node.js command-line application taking user input via the inquirer package and 
 
 - Node.js
 - Inquirer package
+- Jest
 - HTML
 - Bootstrap
 
 ## Installation
 
-Run the following script to test the application:
+Run the following script to install the application:
 
 ```
 git clone https://github.com/kayleriegerpatton/team-profile-generator.git
