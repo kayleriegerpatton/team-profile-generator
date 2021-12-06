@@ -61,7 +61,6 @@ const start = async () => {
     // end application
     if (newEmployeeTypeAnswer.employeeType === "none") {
       inProgress = false;
-      //   process.exit(0);
     }
   }
 

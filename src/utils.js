@@ -1,8 +1,6 @@
 // imports
 const fs = require("fs");
 
-// const getAnswers = () => {};
-
 const validateInput = (input) => {
   if (!input) {
     return "Field is required.";
