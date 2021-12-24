@@ -1,18 +1,22 @@
 # Team Profile Generator ![MIT](https://img.shields.io/static/v1?label=MIT&message=License&color=blueviolet)
 
+## Table of Contents
+
+- [Description](#description)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Tests](#tests)
+- [Contributing](#contributing)
+- [License](#license)
+- [Demo Video](#demo-video)
+
 ## Description
 
 Node.js command-line application taking user input via the inquirer package and returning a styled "team profile" html page with individual member cards.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Tests](#tests)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Built With
+### Built With
 
 - Node.js
 - Inquirer package
@@ -20,7 +24,9 @@ Node.js command-line application taking user input via the inquirer package and 
 - HTML
 - Bootstrap
 
-## Installation
+## Getting Started
+
+### Installation
 
 Run the following script to install the application:
 
@@ -30,7 +36,7 @@ cd team-profile-generator
 npm install
 ```
 
-## Usage
+### Usage
 
 Run the following script to use the application:
 
@@ -38,7 +44,7 @@ Run the following script to use the application:
 npm run start
 ```
 
-## Tests
+### Tests
 
 Run the following script to test the application:
 
@@ -56,6 +62,6 @@ To contribute to this project, please [email](mailto:kayle.patton22@gmail.com) m
 
 MIT License
 
-## Video Walk Through
+## Demo Video
 
-[Google Drive link](https://drive.google.com/file/d/1cAm5uS1AbOoy8jIXAAhPEshkxHG2Q4zB/view?usp=sharing)
+Click to view the [app demo video](https://drive.google.com/file/d/1cAm5uS1AbOoy8jIXAAhPEshkxHG2Q4zB/view?usp=sharing)
