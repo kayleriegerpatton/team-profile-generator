@@ -38,7 +38,7 @@ const managerQuestions = [
     message: "Manager email address:",
     validate: (email) => {
       return (
-        /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email) ||
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) ||
         "Please enter a valid email."
       );
     },
@@ -87,7 +87,7 @@ const engineerQuestions = [
     message: "Email address:",
     validate: (email) => {
       return (
-        /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email) ||
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) ||
         "Please enter a valid email."
       );
     },
@@ -121,7 +121,7 @@ const internQuestions = [
     message: "Email address:",
     validate: (email) => {
       return (
-        /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email) ||
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) ||
         "Please enter a valid email."
       );
     },
