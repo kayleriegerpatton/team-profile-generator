@@ -16,7 +16,7 @@
 
 Node.js command-line application taking user input via the inquirer package and returning a styled "team profile" html page with individual member cards.
 
-### Built With
+### Technologies
 
 - Node.js
 - Inquirer package
@@ -64,4 +64,6 @@ MIT License
 
 ## Demo Video
 
-Click to view the [app demo video](https://drive.google.com/file/d/1cAm5uS1AbOoy8jIXAAhPEshkxHG2Q4zB/view?usp=sharing)
+View the [app demo video](https://drive.google.com/file/d/1cAm5uS1AbOoy8jIXAAhPEshkxHG2Q4zB/view?usp=sharing)
+
+![command line runthrough of coded question prompts and resulting webpage](assets/gifs/TeamProfileGeneratorGif.gif)
